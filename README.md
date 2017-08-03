@@ -5,7 +5,7 @@ This README would document whatever steps are necessary to get the application u
 * Node.js Canvas Integration API (API)
 * 1.0.0
 
-### How to Configure and Run ###
+### How to Configure and Run
 ####Dependencies
     * Node.js (8.2.1)
     * npm (5.3.0)
