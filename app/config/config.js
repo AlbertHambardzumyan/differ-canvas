@@ -39,7 +39,7 @@ module.exports = config[env];
 function _loadLocalEnv() {
     let env = {};
     try {
-        env = require('../../../.env');
+        env = require('../../.env');
     } catch (e) {
         if (e instanceof Error && e.code === 'MODULE_NOT_FOUND')
             console.info('.env is not specified.');
