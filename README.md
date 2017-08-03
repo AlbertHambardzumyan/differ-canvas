@@ -6,11 +6,11 @@ This README would document whatever steps are necessary to get the application u
 * 1.0.0
 
 ### How to Configure and Run ###
-#####Dependencies
+####Dependencies
     * Node.js (8.2.1)
     * npm (5.3.0)
     * Mongodb (3.4.6)
-#####Setup
+####Setup
     Environment variables:
         NODE_ENV (development*, production)
         HOST
