@@ -1,7 +1,7 @@
 {
   "name": "differ-canvas",
   "version": "1.0.0",
-  "description": "Nodejs Canvas Integration API",
+  "description": "Node.js Canvas Integration API",
   "contributors": [
     {
       "name": "Albert Hambardzumyan",
