@@ -1,14 +1,24 @@
-"use strict";
+#!/usr/bin/env node
+
+const http = require('http');
+const debug = require('debug')('differ-canvas:server');
+
+const config = require('../app/config/').Config;
 
 const app = require('../app');
-const debug = require('debug')('differ-canvas:server');
-const http = require('http');
+
 
 /**
- * @description Get port from environment and store in Express.
+ * @description Get port and store in Express.
  */
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || config.PORT);
 app.set('port', port);
+
+/**
+ * @description Get host and store in Express.
+ */
+const host = (process.env.HOST || config.HOST);
+app.set('host', host);
 
 /**
  * @description Create HTTP server.
@@ -18,7 +28,9 @@ const server = http.createServer(app);
 /**
  * @description Listen on provided port, on all network interfaces.
  */
-server.listen(port);
+server.listen(port, host, function () {
+    debug(`Server Address: ${JSON.stringify(this.address())}`);
+});
 server.on('error', _onError);
 server.on('listening', _onListening);
 
