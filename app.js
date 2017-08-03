@@ -2,8 +2,17 @@
 
 const express = require('express');
 
+const config = require('./app/config/').Config;
+
+const database = require('./app/database/').Database;
+
 const app = express();
 
+
+/**
+ * @description Initialize database.
+ */
+database.init(config.MONGODB_URL);
 
 /**
  * @description Catch 404 and forward to error handler.

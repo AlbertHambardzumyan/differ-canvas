@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "debug": "~2.6.3",
-    "express": "~4.15.2"
+    "express": "~4.15.2",
+    "mongoose": "~4.11.5"
   }
 }
