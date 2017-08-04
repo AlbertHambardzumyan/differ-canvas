@@ -7,6 +7,8 @@ const express = require('express');
 
 const config = require('./app/config/').Config;
 
+const ErrorHandler = require('./app/util/').ErrorHandler;
+
 const database = require('./app/database/').Database;
 
 const api = require('./app/api/api');
@@ -49,9 +51,7 @@ app.use((req, res, next) => {
 /**
  * @description Error handler (middleware).
  */
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500).json(err);
-});
+app.use(ErrorHandler.handleError());
 
 
 module.exports = app;
