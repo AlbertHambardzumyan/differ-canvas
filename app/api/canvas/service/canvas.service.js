@@ -2,7 +2,9 @@
 
 const async = require('async');
 
-const UsersModel = require('../../../models/').Users;
+const models = require('../../../models/'),
+    CanvasModel = models.Canvas,
+    UsersModel = models.Users;
 
 
 module.exports = {
@@ -40,9 +42,19 @@ module.exports = {
      * @description Import.
      */
     import: (req, res, next) => {
-        const token = req.body['token']; // TODO check for query vs body. Requirement was query.
+        const token = req.body['token'];
 
-        res.json('TBA');
+        async.waterfall([
+            (callback) => {
+                CanvasModel.fetchCourses(token, callback);
+            },
+            (courses, callback) => {
+                UsersModel.saveCourses(courses, token, callback);
+            }
+        ], (err, result) => {
+            if (err) next(err);
+            else res.json(result); //TODO resolve success
+        });
     },
 
     /**

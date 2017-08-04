@@ -42,5 +42,26 @@ module.exports = {
         Users.find(query, projection, (err, result) => {
             callback(err, result);
         });
+    },
+
+    /**
+     * @type function
+     * @access public
+     * @param {array} courses - The courses of the user.
+     * @param {string} token - The token of the user.
+     * @param {function} callback
+     * @author Albert Hambardzumyan <hambardzumyan.albert@gmail.com>
+     * @description Save courses.
+     */
+    saveCourses: (courses, token, callback) => {
+        const query = {token: token},
+            update = {
+                $set: {courses: courses}
+            },
+            options = {new: true};
+
+        Users.findOneAndUpdate(query, update, options, (err, result) => {
+            callback(err, result);
+        });
     }
 };
