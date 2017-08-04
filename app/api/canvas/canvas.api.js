@@ -110,10 +110,11 @@ router.post('/import', (req, res, next) => {
  *         schema:
  *           $ref: '#/definitions/ErrorResponse'
  */
-router.get('/courses', (req, res, next) => {
+router.get('/courses',
+    CanvasMiddle.validateGetCoursesArgs, (req, res, next) => {
 
-    CanvasSVC.getCourses(req, res, next);
-});
+        CanvasSVC.getCourses(req, res, next);
+    });
 
 
 module.exports = router;
