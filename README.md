@@ -53,4 +53,4 @@ This README would document whatever steps are necessary to get the application u
 #### Default
     POST              /api/v1/link-account
     POST              /api/v1/import
-    Get               /api/v1/courses
+    GET               /api/v1/courses
