@@ -13,7 +13,7 @@ const config = {
 
     development: {
         HOST: localEnv.HOST || '188.166.63.248',
-        PORT: localEnv.PORT || '9010',
+        PORT: localEnv.PORT || '9030',
 
         MONGODB_URL: localEnv.MONGODB_URL || 'mongodb://localhost:27017/differ-canvas'
     },
