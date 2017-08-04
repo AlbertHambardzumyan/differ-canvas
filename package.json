@@ -26,10 +26,11 @@
     "npm": "5.3.0"
   },
   "dependencies": {
-    "async": "^2.5.0",
+    "async": "~2.5.0",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "mongoose": "~4.11.5",
-    "mongoose-hidden": "~1.4.0"
+    "mongoose-hidden": "~1.4.0",
+    "swagger-jsdoc": "~1.9.7"
   }
 }
