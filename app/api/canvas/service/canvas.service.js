@@ -56,6 +56,13 @@ module.exports = {
     getCourses: (req, res, next) => {
         const token = req.query['token'];
 
-        res.json('TBA');
+        async.waterfall([
+            (callback) => {
+                UsersModel.getCourses(token, callback);
+            }
+        ], (err, result) => {
+            if (err) next(err);
+            else res.json(result); //TODO resolve success
+        });
     }
 };

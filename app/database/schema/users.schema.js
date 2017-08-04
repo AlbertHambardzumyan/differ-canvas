@@ -7,7 +7,8 @@ const mongoose = require('mongoose'),
  * @description Define the schema for our Users model.
  */
 const Users = new mongoose.Schema({
-    token: {type: String, unique: true, require: true}
+    token: {type: String, unique: true, require: true},
+    courses: {type: Array, default: []}
 });
 
 

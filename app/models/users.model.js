@@ -24,5 +24,22 @@ module.exports = {
         Users.create(insert, (err, result) => {
             callback(err, result);
         });
+    },
+
+    /**
+     * @type function
+     * @access public
+     * @param {string} token - The token of the user.
+     * @param {function} callback
+     * @author Albert Hambardzumyan <hambardzumyan.albert@gmail.com>
+     * @description Get courses.
+     */
+    getCourses: (token, callback) => {
+        const query = {token: token},
+            projection = {courses: 1, _id: 0};
+
+        Users.find(query, projection, (err, result) => {
+            callback(err, result);
+        });
     }
 };
