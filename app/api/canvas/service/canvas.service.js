@@ -1,5 +1,9 @@
 "use strict";
 
+const async = require('async');
+
+const UsersModel = require('../../../models/').Users;
+
 
 module.exports = {
 
@@ -15,7 +19,14 @@ module.exports = {
     linkAccount: (req, res, next) => {
         const token = req.body['token'];
 
-        res.json('TBA');
+        async.waterfall([
+            (callback) => {
+                UsersModel.linkAccount(token, callback);
+            }
+        ], (err, result) => {
+            if (err) next(err);
+            else res.json(result);
+        });
     },
 
     /**
