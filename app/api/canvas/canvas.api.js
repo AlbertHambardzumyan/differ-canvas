@@ -67,6 +67,10 @@ router.post('/link-account',
  *     responses:
  *       201:
  *         description: Successfully created.
+ *       204:
+ *         description: No affected rows
+ *         schema:
+ *           $ref: '#/definitions/ErrorResponse'
  *       400:
  *         description: Invalid input
  *         schema:
@@ -103,6 +107,10 @@ router.post('/import', (req, res, next) => {
  *         description: Successfully listed.
  *       400:
  *         description: Invalid input.
+ *         schema:
+ *           $ref: '#/definitions/ErrorResponse'
+ *       404:
+ *         description: Not found
  *         schema:
  *           $ref: '#/definitions/ErrorResponse'
  *       500:
