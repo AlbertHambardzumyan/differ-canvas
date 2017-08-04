@@ -6,6 +6,8 @@ const models = require('../../../models/'),
     CanvasModel = models.Canvas,
     UsersModel = models.Users;
 
+const SuccessHandler = require('../../../util/').SuccessHandler;
+
 
 module.exports = {
 
@@ -27,8 +29,8 @@ module.exports = {
                 UsersModel.linkAccount(userId, token, callback);
             }
         ], (err, result) => {
-            if (err) next(err); //TODO resolve success
-            else res.json(result);
+            if (err) next(err);
+            else SuccessHandler.handleAdd(res, next, result);
         });
     },
 
@@ -53,7 +55,7 @@ module.exports = {
             }
         ], (err, result) => {
             if (err) next(err);
-            else res.json(result); //TODO resolve success
+            else SuccessHandler.handleUpdate(res, next, result);
         });
     },
 
@@ -75,7 +77,7 @@ module.exports = {
             }
         ], (err, result) => {
             if (err) next(err);
-            else res.json(result); //TODO resolve success
+            else SuccessHandler.handleGet(res, next, result);
         });
     }
 };
