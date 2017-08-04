@@ -2,6 +2,7 @@
 
 const path = require('path');
 
+const bodyParser = require('body-parser');
 const express = require('express');
 
 const config = require('./app/config/').Config;
@@ -22,6 +23,14 @@ app.use(express.static(path.join(__dirname, 'public')));
  * @description Initialize database.
  */
 database.init(config.MONGODB_URL);
+
+/**
+ * @description Middleware - body parser:
+ * 1. Parses the text as URL encoded data.
+ * 2. Parses the text as JSON & exposes the resulting object on req.body.
+ */
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 /**
  * @description Initialize api
