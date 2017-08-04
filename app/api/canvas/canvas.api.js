@@ -127,6 +127,9 @@ module.exports = router;
  *   AddLinkAccountArgs:
  *     type: object
  *     properties:
+ *       userId:
+ *         type: number
+ *         example: 34
  *       token:
  *         type: string
  *         example: DP94K9btj2Tj67U9gUDoJc1XgZzgWkIUxgZuyj6wIv3BuaPuLF8dcBcNrmyWCT9z

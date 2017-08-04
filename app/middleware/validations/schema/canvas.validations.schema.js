@@ -15,6 +15,7 @@ module.exports = {
      */
     linkAccount: {
         body: {
+            userId: Joi.number().integer().positive().required(),
             token: Joi.string().max(100).required()
         }
     },

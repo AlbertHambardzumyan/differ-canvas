@@ -17,11 +17,12 @@ module.exports = {
      * @description Link account.
      */
     linkAccount: (req, res, next) => {
+        const userId = req.body['userId'];
         const token = req.body['token'];
 
         async.waterfall([
             (callback) => {
-                UsersModel.linkAccount(token, callback);
+                UsersModel.linkAccount(userId, token, callback);
             }
         ], (err, result) => {
             if (err) next(err); //TODO resolve success

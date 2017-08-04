@@ -13,13 +13,14 @@ module.exports = {
     /**
      * @type function
      * @access public
+     * @param {number} userId - The id of the user.
      * @param {string} token - The token of the user.
      * @param {function} callback
      * @author Albert Hambardzumyan <hambardzumyan.albert@gmail.com>
      * @description Link account.
      */
-    linkAccount: (token, callback) => {
-        const insert = {token: token};
+    linkAccount: (userId, token, callback) => {
+        const insert = {userId: userId, token: token};
 
         Users.create(insert, (err, result) => {
             callback(err, result);
