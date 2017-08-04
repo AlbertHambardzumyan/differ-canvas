@@ -2,6 +2,8 @@
 
 const router = require('express').Router();
 
+const CanvasMiddle = require('../../middleware/').Canvas;
+
 const CanvasSVC = require('./service/canvas.service');
 
 
@@ -38,14 +40,18 @@ const CanvasSVC = require('./service/canvas.service');
  *         schema:
  *           $ref: '#/definitions/ErrorResponse'
  */
-router.post('/link-account', (req, res, next) => {
-    CanvasSVC.linkAccount(req, res, next);
-});
+router.post('/link-account',
+    CanvasMiddle.validateLinkAccountArgs, (req, res, next) => {
+
+        CanvasSVC.linkAccount(req, res, next);
+    });
+
 
 router.post('/import', (req, res, next) => {
 
     CanvasSVC.import(req, res, next);
 });
+
 
 router.get('/courses', (req, res, next) => {
 
