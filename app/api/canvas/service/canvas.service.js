@@ -24,7 +24,7 @@ module.exports = {
                 UsersModel.linkAccount(token, callback);
             }
         ], (err, result) => {
-            if (err) next(err);
+            if (err) next(err); //TODO resolve success
             else res.json(result);
         });
     },

@@ -47,12 +47,69 @@ router.post('/link-account',
     });
 
 
+/**
+ * @swagger
+ * /import:
+ *   post:
+ *     description: Import.
+ *     operationId: import
+ *     consumes:
+ *       - application/json
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: import
+ *         description: Import object that needs to be added.
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/AddImportArgs'
+ *     responses:
+ *       201:
+ *         description: Successfully created.
+ *       400:
+ *         description: Invalid input
+ *         schema:
+ *           $ref: '#/definitions/ErrorResponse'
+ *       500:
+ *         description: Internal error.
+ *         schema:
+ *           $ref: '#/definitions/ErrorResponse'
+ */
 router.post('/import', (req, res, next) => {
 
     CanvasSVC.import(req, res, next);
 });
 
 
+/**
+ * @swagger
+ * /courses:
+ *   get:
+ *     description: Get courses.
+ *     operationId: getCourses
+ *     consumes:
+ *       - application/json
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: token
+ *         description: The token of the user.
+ *         in: query
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: Successfully listed.
+ *       400:
+ *         description: Invalid input.
+ *         schema:
+ *           $ref: '#/definitions/ErrorResponse'
+ *       500:
+ *         description: Internal error.
+ *         schema:
+ *           $ref: '#/definitions/ErrorResponse'
+ */
 router.get('/courses', (req, res, next) => {
 
     CanvasSVC.getCourses(req, res, next);
@@ -67,6 +124,13 @@ module.exports = router;
  * definitions:
  *
  *   AddLinkAccountArgs:
+ *     type: object
+ *     properties:
+ *       token:
+ *         type: string
+ *         example: DP94K9btj2Tj67U9gUDoJc1XgZzgWkIUxgZuyj6wIv3BuaPuLF8dcBcNrmyWCT9z
+ *
+ *   AddImportArgs:
  *     type: object
  *     properties:
  *       token:
