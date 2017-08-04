@@ -1,5 +1,7 @@
 "use strict";
 
+const path = require('path');
+
 const express = require('express');
 
 const config = require('./app/config/').Config;
@@ -10,6 +12,11 @@ const api = require('./app/api/api');
 
 const app = express();
 
+
+/**
+ * @description Serve static files.
+ */
+app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * @description Initialize database.
