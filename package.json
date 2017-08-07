@@ -30,7 +30,7 @@
     "async": "~2.5.0",
     "body-parser": "~1.17.2",
     "debug": "~2.6.3",
-    "express": "~4.15.2",
+    "express": "~4.15.4",
     "joi": "~10.6.0",
     "mongoose": "~4.11.5",
     "mongoose-hidden": "~1.4.0",
@@ -38,7 +38,7 @@
     "swagger-jsdoc": "~1.9.7"
   },
   "devDependencies": {
-    "chai": "~4.1.0",
+    "chai": "~4.1.1",
     "supertest": "~3.0.0"
   }
 }
