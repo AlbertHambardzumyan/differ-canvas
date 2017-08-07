@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha --recursive --timeout 2000 test/unit/models"
+    "test": "mocha --recursive --timeout 5000 test/unit/models"
   },
   "engines": {
     "node": "8.2.1",

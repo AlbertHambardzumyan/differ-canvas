@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 
+global.token = 'DP94K9btj2Tj67U9gUDoJc1XgZzgWkIUxgZuyj6wIv3BuaPuLF8dcBcNrmyWCT9z';
+
 
 // database connection init, drop database.
 before((done) => {

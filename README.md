@@ -47,7 +47,9 @@ This README would document whatever steps are necessary to get the application u
 
 ### Testing
 #### Unit test
-    Setup: Update package.json -> scripts -> test, set to test/unit/models
+    Setup:
+        a) Update package.json -> scripts -> test, set to test/unit/models
+        b) Update globals (token) in test/unit/models/helper.js
     Run: npm test
 
 ### Swagger
