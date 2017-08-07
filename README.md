@@ -13,13 +13,13 @@ This README would document whatever steps are necessary to get the application u
     
     * mocha (3.5.0)
 #### Configuration
-    Make configuration changes in app/config/config.js (development, production)
+    Make configuration changes in app/config/config.js (development, test, production)
         HOST
         PORT
-        WEBSITE_URL
+        MONGODB_URL
 #### Setup
     Environment variables:
-        NODE_ENV (development*, production)
+        NODE_ENV (development*, test, production)
         HOST
         PORT
     
