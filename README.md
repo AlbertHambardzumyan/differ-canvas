@@ -10,6 +10,8 @@ This README would document whatever steps are necessary to get the application u
     * Node.js (8.2.1)
     * npm (5.3.0)
     * Mongodb (3.4.6)
+    
+    * mocha (3.5.0)
 #### Configuration
     Make configuration changes in app/config/config.js (development, production)
         HOST
@@ -42,8 +44,13 @@ This README would document whatever steps are necessary to get the application u
         PORT: '443',
         ....
     };
-    
-### Swagger 
+
+### Testing
+#### Unit test
+    Setup: Update package.json -> scripts -> test, set to test/unit/models
+    Run: npm test
+
+### Swagger
 #### Endpoint
     Protocol://Ip:Port/api-docs. (ex. - http://146.185.149.49:3000/api-docs). This will load the default example.
     Loaded page should have an input filed. Use Protocol://Ip:Port/api/v1/swagger.json to get the API's.

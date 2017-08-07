@@ -19,7 +19,8 @@
     "url": "https://github.com/AlbertHambardzumyan/differ-canvas"
   },
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "mocha --recursive --timeout 2000 test/unit/models"
   },
   "engines": {
     "node": "8.2.1",
@@ -35,5 +36,8 @@
     "mongoose-hidden": "~1.4.0",
     "request": "~2.81.0",
     "swagger-jsdoc": "~1.9.7"
+  },
+  "devDependencies": {
+    "chai": "~4.1.0"
   }
 }
