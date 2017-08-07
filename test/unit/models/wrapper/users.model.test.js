@@ -11,7 +11,7 @@ describe('Users Model', () => {
     const userId = 34,
         courses = [{id: 5, name: 'Data Structures'}];
 
-    const NOT_valid_token = '45fh38rtv0';
+    const INVALID_token = '45fh38rtv0';
 
     describe('linkAccount', () => {
         it('should Link Account', (done) => {
@@ -50,7 +50,7 @@ describe('Users Model', () => {
         });
 
         it('should get empty array.', (done) => {
-            UsersModel.getCourses(NOT_valid_token, (err, result) => {
+            UsersModel.getCourses(INVALID_token, (err, result) => {
                 expect(err).to.be.null;
 
                 expect(result).to.be.instanceOf(Array).length(0);
