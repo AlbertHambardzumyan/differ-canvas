@@ -47,7 +47,7 @@ module.exports = {
     /**
      * @type function
      * @access public
-     * @param {array} courses - The courses of the user.
+     * @param {[*]} courses - The courses of the user.
      * @param {string} token - The token of the user.
      * @param {function} callback
      * @author Albert Hambardzumyan <hambardzumyan.albert@gmail.com>
