@@ -21,8 +21,8 @@ module.exports = {
      * @description Link account.
      */
     linkAccount: (req, res, next) => {
-        const userId = req.body['userId'];
-        const token = req.body['token'];
+        const {userId} = req.body;
+        const {token} = req.body;
 
         async.waterfall([
             (callback) => {
@@ -44,7 +44,7 @@ module.exports = {
      * @description Import.
      */
     import: (req, res, next) => {
-        const token = req.body['token'];
+        const {token} = req.body;
 
         async.waterfall([
             (callback) => {
@@ -69,7 +69,7 @@ module.exports = {
      * @description Get courses.
      */
     getCourses: (req, res, next) => {
-        const token = req.query['token'];
+        const {token} = req.query;
 
         async.waterfall([
             (callback) => {
