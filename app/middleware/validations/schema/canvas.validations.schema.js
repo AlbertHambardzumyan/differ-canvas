@@ -21,6 +21,15 @@ module.exports = {
     },
 
     /**
+     * @description Import args.
+     */
+    import: {
+        body: {
+            token: Joi.string().max(100).required()
+        }
+    },
+
+    /**
      * @description Get courses args.
      */
     getCourses: {

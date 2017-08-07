@@ -80,10 +80,11 @@ router.post('/link-account',
  *         schema:
  *           $ref: '#/definitions/ErrorResponse'
  */
-router.post('/import', (req, res, next) => {
+router.post('/import',
+    CanvasMiddle.validateImportArgs, (req, res, next) => {
 
-    CanvasSVC.import(req, res, next);
-});
+        CanvasSVC.import(req, res, next);
+    });
 
 
 /**
