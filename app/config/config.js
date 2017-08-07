@@ -18,6 +18,13 @@ const config = {
         MONGODB_URL: localEnv.MONGODB_URL || 'mongodb://localhost:27017/differ-canvas'
     },
 
+    test: {
+        HOST: '127.0.0.1',
+        PORT: '3000',
+
+        MONGODB_URL: 'mongodb://localhost:27017/differ-canvas_test_integration'
+    },
+
     production: {
         HOST: '127.0.0.1',
         PORT: '9010',
