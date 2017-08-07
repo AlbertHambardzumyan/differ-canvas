@@ -55,7 +55,7 @@ module.exports = {
             }
         ], (err, result) => {
             if (err) next(err);
-            else SuccessHandler.handleUpdate(res, next, result);
+            else SuccessHandler.handleAdd(res, next, result);
         });
     },
 
