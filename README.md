@@ -51,6 +51,13 @@ This README would document whatever steps are necessary to get the application u
         a) Update package.json -> scripts -> test, set to test/unit/models
         b) Update globals (token) in test/unit/models/helper.js
     Run: npm test
+#### Integration test
+    Setup:
+        a) Update package.json -> scripts -> test, set to test/integration/routes
+        b) Update globals in test/integration/routes/helper.js
+        c) Drop your integration test database
+        d) Run server (env test)
+    Run: npm test
 
 ### Swagger
 #### Endpoint
