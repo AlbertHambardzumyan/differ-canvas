@@ -15,15 +15,18 @@ module.exports = {
      * @access public
      * @param {number} userId - The id of the user.
      * @param {string} token - The token of the user.
-     * @param {function} callback
      * @author Albert Hambardzumyan <hambardzumyan.albert@gmail.com>
      * @description Link account.
      */
-    linkAccount: (userId, token, callback) => {
+    linkAccount: (userId, token) => {
         const insert = {userId: userId, token: token};
 
-        Users.create(insert, (err, result) => {
-            callback(err, result);
+        return new Promise((resolve, reject) => {
+            Users.create(insert, (err, result) => {
+                if (err) return reject(err);
+
+                resolve(result);
+            });
         });
     },
 
@@ -31,16 +34,19 @@ module.exports = {
      * @type function
      * @access public
      * @param {string} token - The token of the user.
-     * @param {function} callback
      * @author Albert Hambardzumyan <hambardzumyan.albert@gmail.com>
      * @description Get courses.
      */
-    getCourses: (token, callback) => {
+    getCourses: (token) => {
         const query = {token: token},
             projection = {courses: 1, _id: 0};
 
-        Users.find(query, projection, (err, result) => {
-            callback(err, result);
+        return new Promise((resolve, reject) => {
+            Users.find(query, projection, (err, result) => {
+                if (err) return reject(err);
+
+                resolve(result);
+            });
         });
     },
 
@@ -49,19 +55,22 @@ module.exports = {
      * @access public
      * @param {[*]} courses - The courses of the user.
      * @param {string} token - The token of the user.
-     * @param {function} callback
      * @author Albert Hambardzumyan <hambardzumyan.albert@gmail.com>
      * @description Save courses.
      */
-    saveCourses: (courses, token, callback) => {
+    saveCourses: (courses, token) => {
         const query = {token: token},
             update = {
                 $set: {courses: courses}
             },
             options = {new: true};
 
-        Users.findOneAndUpdate(query, update, options, (err, result) => {
-            callback(err, result);
+        return new Promise((resolve, reject) => {
+            Users.findOneAndUpdate(query, update, options, (err, result) => {
+                if (err) return reject(err);
+
+                resolve(result);
+            });
         });
     }
 };
