@@ -1,7 +1,7 @@
 "use strict";
 
-const localEnv = _loadLocalEnv(),
-    env = process.env.NODE_ENV || 'development';
+const localEnv = _loadLocalEnv();
+const env = process.env.NODE_ENV || 'development';
 
 
 /**

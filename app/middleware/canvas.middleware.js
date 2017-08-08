@@ -7,9 +7,9 @@
  */
 const Joi = require('joi');
 
-const CanvasValidationsSchema = require('./validations/').CanvasValidationsSchema;
+const CanvasValidationsSchema = require('./validations/schema/canvas.validations.schema');
 
-const ValidationErrorHandler = require('../util/').ValidationErrorHandler;
+const ValidationErrorHandler = require('../util/validation-error-handler.util');
 
 
 module.exports = {

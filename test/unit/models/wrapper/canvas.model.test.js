@@ -1,9 +1,10 @@
 "use strict";
 
-const chai = require('chai'),
-    expect = chai.expect;
+const chai = require('chai');
 
-const CanvasModel = require('../../../../app/models/index').Canvas;
+const expect = chai.expect;
+
+const CanvasModel = require('../../../../app/models/canvas.model');
 
 
 describe('Canvas Model', () => {

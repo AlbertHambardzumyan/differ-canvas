@@ -1,10 +1,10 @@
 "use strict";
 
-const chai = require('chai'),
-    superTest = require('supertest');
+const chai = require('chai');
+const superTest = require('supertest');
 
-const server = superTest.agent(API),
-    expect = chai.expect;
+const server = superTest.agent(API);
+const expect = chai.expect;
 
 
 describe('Accounts Api', () => {

@@ -1,7 +1,7 @@
 "use strict";
 
-const mongoose = require('mongoose'),
-    mongooseHidden = require('mongoose-hidden')();
+const mongoose = require('mongoose');
+const mongooseHidden = require('mongoose-hidden')();
 
 /**
  * @description Define the schema for our Users model.

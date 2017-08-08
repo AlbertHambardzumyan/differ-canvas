@@ -2,7 +2,7 @@
 
 const router = require('express').Router();
 
-const CanvasMiddle = require('../../middleware/').Canvas;
+const CanvasMiddle = require('../../middleware/canvas.middleware');
 
 const CanvasSVC = require('./service/canvas.service');
 

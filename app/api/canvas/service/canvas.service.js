@@ -1,10 +1,9 @@
 "use strict";
 
-const models = require('../../../models/'),
-    CanvasModel = models.Canvas,
-    UsersModel = models.Users;
+const CanvasModel = require('../../../models/canvas.model');
+const UsersModel = require('../../../models/users.model');
 
-const SuccessHandler = require('../../../util/').SuccessHandler;
+const SuccessHandler = require('../../../util/success-handler.util');
 
 
 module.exports = {

@@ -1,9 +1,10 @@
 "use strict";
 
-const chai = require('chai'),
-    expect = chai.expect;
+const chai = require('chai');
 
-const UsersModel = require('../../../../app/models/index').Users;
+const expect = chai.expect;
+
+const UsersModel = require('../../../../app/models/users.model');
 
 
 describe('Users Model', () => {

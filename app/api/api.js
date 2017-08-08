@@ -8,8 +8,8 @@ const SWAGGER_CONFIG = require('./config/swagger.config');
 // require all APIs
 const canvas = require("./canvas/canvas.api");
 
-const router = express.Router(),
-    app = express();
+const router = express.Router();
+const app = express();
 
 const basePath = `/api/${API_CONFIG.API_VERSION}`;
 

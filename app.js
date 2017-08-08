@@ -5,11 +5,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const config = require('./app/config/').Config;
+const config = require('./app/config/config');
 
-const ErrorHandler = require('./app/util/').ErrorHandler;
+const ErrorHandler = require('./app/util/error-handler.util');
 
-const database = require('./app/database/').Database;
+const database = require('./app/database/database');
 
 const api = require('./app/api/api');
 

@@ -3,7 +3,7 @@
 const http = require('http');
 const debug = require('debug')('differ-canvas:server');
 
-const config = require('../app/config/').Config;
+const config = require('../app/config/config');
 
 const app = require('../app');
 

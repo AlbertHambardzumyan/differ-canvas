@@ -5,7 +5,7 @@
  * @description Users schema.
  * @type {*}
  */
-const Users = require('../database/schema/').Users;
+const Users = require('../database/schema/users.schema');
 
 
 module.exports = {
